@@ -44,4 +44,4 @@ History:
 
 09/24/2025 - Theme .xml version 1.0 file created for mybb 1.8.39 usage
 
-09/24/2025 — Theme initial conversion from FA6 to FA7 creation
+09/24/2025 - Theme initial conversion from FA6 to FA7 creation
