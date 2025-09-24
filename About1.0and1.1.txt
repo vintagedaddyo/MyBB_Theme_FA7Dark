@@ -1,0 +1,7 @@
+Where is there a 1.0? and 1.1? ( ie: FA7Dark 1.0 & FA7Dark)
+
+FA7Dark 1.0-theme.xml  -> 1.0
+FA7Dark-theme.xml -> 1.1
+
+You will find that in this main directory we include the latest xml file of theme, ie: FA7Dark-theme.xml, but, inside the documentations folder you will find directories ie: 1.0 and 1.1 and inside each you will find directories for example like: 1.8.39, ok, this is because I opted to include the older variant of the theme ie: 1.0 and then obviously provide the current version ie: 1.1 .xml files just in case the end user decided they wanted to use either or as their base to then use and improve upon. Hopefully this explanation makes sense. Best of luck! :)
+ 
