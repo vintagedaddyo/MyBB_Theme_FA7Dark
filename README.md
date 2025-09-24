@@ -3,7 +3,7 @@
 FA7Dark v1.1
 » About:
 
-Current FA 7 library: fontawesome-free-7.0.1-web
+Current FA 7 library: fontawesome-free-7.0.1
 
 
 This theme for MyBB enthusiasts was originally made in FA5 version simply to allow for users having troubles with the Font Awesome 5 tutorials provided and found here: https://community.mybb.com/thread-220017.html This theme has now been converted to Font Awesome 7
