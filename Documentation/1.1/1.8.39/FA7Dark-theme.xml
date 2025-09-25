@@ -3694,7 +3694,16 @@ select {
 }
 }	
 /* end */
-		
+
+/* Tweak for Poll */
+@media (max-width: 868px) {
+    table {
+        table-layout: auto !important;
+    }
+    colgroup > col {
+        width: 100% !important;
+    }
+}		
 		
 		]]>
 		</stylesheet>
