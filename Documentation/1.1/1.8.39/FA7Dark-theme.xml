@@ -735,7 +735,7 @@ i.lostpwd {
 font-size: 36px;
 }
 
-/** Gid CSS FA 5 Username Icon Postbit & Profile & Memberlist by Vintagedaddyo **/
+/** Gid CSS FA 7 Username Icon Postbit & Profile & Memberlist by Vintagedaddyo **/
 
 .titletag {
    display: inline-block;
@@ -763,7 +763,7 @@ font-size: 36px;
    color: #0072BF;
 }
 
-/** Usergroup star rating - FontAwesome 5 **/
+/** Usergroup star rating - FontAwesome 7 **/
 
 .userstar {
    font-family: "Font Awesome 7 Free";
@@ -1981,7 +1981,7 @@ div.error ul {
 	color: #777;
 }
 
-/** Scalable Postbit Buttons FA 5 **/
+/** Scalable Postbit Buttons FA 7 **/
 
 @media (max-width:768px)  {
 .post_controls {
@@ -3744,6 +3744,8 @@ input.login:hover {
 
 i.lostpwd {
    color: #6d5545;
+   display: inline;
+   margin-left: -4px;
 }
 
 i.printer {
@@ -4071,7 +4073,7 @@ ul.thread_tools li.poll:after {
  * 
  */
 
-/** Pure CSS & FA 5 Star Rating By Johnny S & Vintagedaddyo **/
+/** Pure CSS & FA 7 Star Rating By Johnny S & Vintagedaddyo **/
 
  .star_rating_container {
      display: inline-block;
