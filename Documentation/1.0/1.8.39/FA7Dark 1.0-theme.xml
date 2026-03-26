@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <theme name="FA7Dark 1.0" version="1839">
 	<properties>
-		<templateset><![CDATA[4]]></templateset>
+		<templateset><![CDATA[18]]></templateset>
 		<editortheme><![CDATA[FA7-Dark.css]]></editortheme>
 		<imgdir><![CDATA[themes/FA7Dark]]></imgdir>
 		<logo><![CDATA[themes/FA7Dark/logo.png]]></logo>
@@ -113,6 +113,7 @@
 .post.classic > .post_content {
    padding:  1% 1% 5px 1% !important;
 }
+		
 		
 		
 		
@@ -2842,6 +2843,7 @@ div.jqi .jqisubstate .jqibuttons button{
 		
 		
 		
+		
 		]]>
 		</stylesheet>
 		<stylesheet name="css3.css" version="1839"><![CDATA[/*
@@ -3004,6 +3006,7 @@ button, input.button, input.textbox, input.invalid_field, input.valid_field, sel
     -webkit-border-radius: 3px;
     border-radius: 3px
 }
+		
 		
 		
 		
@@ -3254,6 +3257,7 @@ color: #d56c2c;
 }
 
 
+		
 		
 		
 		
@@ -3521,6 +3525,7 @@ color: #385947;
 		
 		
 		
+		
 		]]>
 		</stylesheet>
 		<stylesheet name="color_earth.css" attachedto="earth" version="1839"><![CDATA[/*
@@ -3771,6 +3776,7 @@ color: #4a3b2f;
 		
 		
 		
+		
 		]]>
 		</stylesheet>
 		<stylesheet name="showthread.css" attachedto="showthread.php" version="1839"><![CDATA[/*
@@ -3879,6 +3885,7 @@ ul.thread_tools li.poll:after {
 		
 		
 		
+		
 		]]>
 		</stylesheet>
 		<stylesheet name="star_ratings.css" attachedto="forumdisplay.php|showthread.php" version="1839"><![CDATA[/*
@@ -3969,6 +3976,7 @@ ul.thread_tools li.poll:after {
      text-align: center;
      margin:0 auto;
 }
+		
 		
 		
 		
@@ -4385,6 +4393,7 @@ ul.thread_tools li.poll:after {
 		
 		
 		
+		
 		]]>
 		</stylesheet>
 		<stylesheet name="usercp.css" attachedto="usercp.php|private.php" version="1839"><![CDATA[/*
@@ -4680,6 +4689,7 @@ td[class^=trow]{
 		
 		
 		
+		
 		]]>
 		</stylesheet>
 		<stylesheet name="modcp.css" attachedto="modcp.php" version="1839"><![CDATA[/*
@@ -4796,6 +4806,7 @@ td[class^=trow]{
 	border: 1px solid #ccc;
 	text-decoration: none;
 }
+		
 		
 		
 		
@@ -5065,6 +5076,7 @@ color: #ffdd4d;
 		
 		
 		
+		
 		]]>
 		</stylesheet>
 		<stylesheet name="color_twilight.css" attachedto="twilight" version="1839"><![CDATA[/*
@@ -5303,6 +5315,7 @@ color: #A0A0A0;
 }
 
 
+		
 		
 		
 		
@@ -5565,6 +5578,7 @@ color: #1e6365;
 		
 		
 		
+		
 		]]>
 		</stylesheet>
 		<stylesheet name="color_flame.css" attachedto="flame" version="1839"><![CDATA[/*
@@ -5801,6 +5815,7 @@ color: #750000;
 }
 
 
+		
 		
 		
 		
@@ -6063,6 +6078,7 @@ color: #386e21;
 		
 		
 		
+		
 		]]>
 		</stylesheet>
 		<stylesheet name="color_night.css" attachedto="night" version="1839"><![CDATA[/*
@@ -6301,6 +6317,7 @@ color: #A0A0A0;
 }
 
 
+		
 		
 		
 		
@@ -6636,6 +6653,7 @@ color: #A0A0A0;
 	color: #fff;
 	border-color: #000;
 }
+		
 		
 		
 		
@@ -7569,14 +7587,15 @@ $("#backtop").hide();
 			</form>
 		</td>
 	</tr>]]></template>
-		<template name="forumdisplay_inlinemoderation" version="1821"><![CDATA[<script type="text/javascript" src="{$mybb->asset_url}/jscripts/inline_moderation.js?ver=1821"></script>
-		<form action="moderation.php" method="post">
+		<template name="forumdisplay_inlinemoderation" version="1839"><![CDATA[<script type="text/javascript" src="{$mybb->asset_url}/jscripts/inline_moderation.js?ver=1838"></script>
+		<form id="inlinemoderation_options" action="moderation.php" method="post">
 <input type="hidden" name="my_post_key" value="{$mybb->post_code}" />
 <input type="hidden" name="fid" value="{$fid}" />
 <input type="hidden" name="modtype" value="inlinethread" />
 <span class="smalltext"><strong>{$lang->inline_thread_moderation}</strong></span>
 <span class="select-wrap">			
-<select name="action">
+<select name="action" id="inlinemoderation_options_selector">
+	<option value="" style="display: none;" selected="selected">{$lang->select_a_tool}</option>
 	<option value="delayedmoderation">{$lang->delayed_moderation}</option>
 	{$standardthreadtools}
 	{$customthreadtools}
@@ -7590,10 +7609,12 @@ $("#backtop").hide();
 	var all_text = "{$threadcount}";
 	var inlineType = "forum";
 	var inlineId = {$fid};
+	lang.select_tool = "{$lang->inline_no_tool_selected}";
+	lang.selected_nil = "{$lang->inline_no_post_selected}";	
 // -->
 </script>
 <br />]]></template>
-		<template name="forumdisplay_threadlist" version="1827"><![CDATA[<div class="float_left">
+		<template name="forumdisplay_threadlist" version="1839"><![CDATA[<div class="float_left">
 	{$multipage}
 </div>
 <div class="float_right">
@@ -7653,8 +7674,7 @@ $("#backtop").hide();
 	{$searchforum}
 	{$forumjump}
 </div>
-<br class="clear" />
-{$inline_edit_js}]]></template>
+<br class="clear" />]]></template>
 		<template name="forumdisplay_threadlist_prefixes" version="1829"><![CDATA[<span class="select-wrap">
 <select name="prefix">
 <option value="-2"{$default_selected['any']}>{$lang->prefix_any}</option>
@@ -7949,7 +7969,6 @@ $(".forumjump").on('change', function() {
 </table>
 <br />]]></template>
 		<template name="index_logoutlink" version="1819"><![CDATA[<a href="member.php?action=logout&amp;logoutkey={$mybb->user['logoutkey']}"><i class="fa-solid fa-power-off tfoot-logout"></i> {$lang->index_logout}</a>]]></template>
-		<template name="index_showteamlink" version="1819"><![CDATA[{$show_team_link_separator}<a href="showteam.php"><i class="fa-solid fa-users tfoot-team"></i> {$lang->forumteam}</a>]]></template>
 		<template name="index_statspage" version="1819"><![CDATA[{$stats_page_separator}<a href="stats.php"><i class="fa-solid fa-chart-bar tfoot-stats"></i> {$lang->forumstats}</a>]]></template>
 		<template name="memberlist" version="1829"><![CDATA[<html>
 <head>
@@ -8103,7 +8122,7 @@ if(use_xmlhttprequest == "1")
 </script>
 </body>
 </html>]]></template>
-		<template name="memberlist_search" version="1829"><![CDATA[<html>
+		<template name="memberlist_search" version="1839"><![CDATA[<html>
 <head>
 <title>{$mybb->settings['bbname']} - {$lang->search_member_list}</title>
 {$headerinclude}
@@ -8138,7 +8157,6 @@ if(use_xmlhttprequest == "1")
 </tr>
 {$contact_fields['skype']}
 {$contact_fields['google']}
-{$contact_fields['icq']}
 <tr>
 	<td class="tcat" colspan="2"><strong>{$lang->search_options}</strong></td>
 </tr>
@@ -8155,8 +8173,8 @@ if(use_xmlhttprequest == "1")
 			{$referrals_option}
 			</select></span><br />
 		<span class="smalltext">
-		<input type="radio" class="radio" name="order" id="order_asc" value="asc" /> <label for="order_asc">{$lang->order_asc}</label><br />
-		<input type="radio" class="radio" name="order" id="order_desc" value="desc" checked="checked" /> <label for="order_desc">{$lang->order_desc}</label>
+		<input type="radio" class="radio" name="order" id="order_asc" value="ascending" /> <label for="order_asc">{$lang->order_asc}</label><br />
+		<input type="radio" class="radio" name="order" id="order_desc" value="descending" checked="checked" /> <label for="order_desc">{$lang->order_desc}</label>
 		</span>
 	</td>
 </tr>
@@ -8503,7 +8521,7 @@ if(use_xmlhttprequest == "1")
 	{$footer}
 </body>
 </html>]]></template>
-		<template name="modcp_editprofile" version="1822"><![CDATA[<html>
+		<template name="modcp_editprofile" version="1839"><![CDATA[<html>
 <head>
 <title>{$mybb->settings['bbname']} - {$lang->edit_profile}</title>
 {$headerinclude}
@@ -8626,12 +8644,6 @@ if(use_xmlhttprequest == "1")
 								<fieldset class="trow2">
 									<legend><strong>{$lang->additional_contact_details}</strong></legend>
 									<table cellspacing="0" cellpadding="{$theme['tablespace']}">
-										<tr>
-											<td><span class="smalltext">{$lang->icq_number}</span></td>
-										</tr>
-										<tr>
-											<td><input type="text" class="textbox" name="icq" size="25" value="{$user_icq}" /></td>
-										</tr>
 										<tr>
 											<td><span class="smalltext">{$lang->skype_id}</span></td>
 										</tr>
@@ -9625,7 +9637,7 @@ if(use_xmlhttprequest == "1")
 </tr>]]></template>
 		<template name="search_results_icon" version="1819"><![CDATA[<div class="posticons-icon posticons-icon_{$posticon['iid']}" title="{$posticon['name']}"style="vertical-align: middle;" />
 <i class="fa-solid fa-"></i></div>]]></template>
-		<template name="search_results_posts_inlinemoderation" version="1821"><![CDATA[<script type="text/javascript" src="{$mybb->asset_url}/jscripts/inline_moderation.js?ver=1821"></script>
+		<template name="search_results_posts_inlinemoderation" version="1839"><![CDATA[<script type="text/javascript" src="{$mybb->asset_url}/jscripts/inline_moderation.js?ver=1838"></script>
 <form action="moderation.php" method="post" style="margin-top: 0; margin-bottom: 0;">
 <input type="hidden" name="my_post_key" value="{$mybb->post_code}" />
 <input type="hidden" name="tid" value="0" />
@@ -9659,7 +9671,7 @@ if(use_xmlhttprequest == "1")
 	var inlineId = "{$sid}";
 // -->
 </script><br />]]></template>
-		<template name="search_results_threads_inlinemoderation" version="1821"><![CDATA[<script type="text/javascript" src="{$mybb->asset_url}/jscripts/inline_moderation.js?ver=1821"></script>
+		<template name="search_results_threads_inlinemoderation" version="1839"><![CDATA[<script type="text/javascript" src="{$mybb->asset_url}/jscripts/inline_moderation.js?ver=1838"></script>
 		<form action="moderation.php" method="post">
 <input type="hidden" name="my_post_key" value="{$mybb->post_code}" />
 <input type="hidden" name="fid" value="0" />
@@ -9702,7 +9714,7 @@ if(use_xmlhttprequest == "1")
 <td width="5%" class="{$bgcolor}"><div class="postbit_buttons">{$emailcode}</div></td>
 <td width="5%" class="{$bgcolor}"><div class="postbit_buttons">{$pmcode}</div></td>
 </tr>]]></template>
-		<template name="showthread_inlinemoderation" version="1821"><![CDATA[<script type="text/javascript" src="{$mybb->asset_url}/jscripts/inline_moderation.js?ver=1821"></script>
+		<template name="showthread_inlinemoderation" version="1839"><![CDATA[<script type="text/javascript" src="{$mybb->asset_url}/jscripts/inline_moderation.js?ver=1838"></script>
 <form action="moderation.php" method="post" style="margin-top: 0; margin-bottom: 0;" id="inlinemoderation_options">
 <input type="hidden" name="my_post_key" value="{$mybb->post_code}" />
 <input type="hidden" name="tid" value="{$tid}" />
@@ -9710,6 +9722,7 @@ if(use_xmlhttprequest == "1")
 <span class="smalltext"><strong>{$lang->inline_post_moderation}</strong></span>
 <span class="select-wrap">	
 <select name="action" id="inlinemoderation_options_selector">
+	<option value="" style="display: none;" selected="selected">{$lang->select_a_tool}</option>
 {$standardposttools}
 {$customposttools}
 </select></span>
@@ -9723,12 +9736,11 @@ if(use_xmlhttprequest == "1")
 	var inlineType = "thread";
 	var inlineId = {$tid};
 
-	$("#inlinemoderation_options_selector").on('change', function() {
-		$("#inlinemoderation_options").trigger('submit');
-	})
+    lang.select_tool = "{$lang->inline_no_tool_selected}";
+	lang.selected_nil = "{$lang->inline_no_post_selected}";
 // -->
 </script><br />]]></template>
-		<template name="showthread_moderationoptions" version="1820"><![CDATA[{$inlinemod}
+		<template name="showthread_moderationoptions" version="1839"><![CDATA[{$inlinemod}
 <form action="moderation.php" method="post" style="margin-top: 0; margin-bottom: 0;" id="moderator_options">
 	<input type="hidden" name="modtype" value="thread" />
 	<input type="hidden" name="tid" value="{$tid}" />
@@ -9737,20 +9749,14 @@ if(use_xmlhttprequest == "1")
 	<strong>{$lang->moderation_options}</strong></span>
 	<span class="select-wrap">
 	<select name="action" id="moderator_options_selector">
+		<option value="" style="display: none;" selected="selected">{$lang->select_a_tool}</option>
 		<option value="delayedmoderation">{$lang->delayed_moderation}</option>
 		{$standardthreadtools}
 		{$customthreadtools}
 	</select></span>
 	{$gobutton}
 </form>
-<br />
-<script type="text/javascript">
-<!--
-	$("#moderator_options_selector").change(function() {
-		$("#moderator_options").submit();
-	})
-//-->
-</script>]]></template>
+<br />]]></template>
 		<template name="showthread_poll_resultbit" version="1819"><![CDATA[<tr>
 <td class="{$optionbg}" align="right" width="400">{$option}{$votestar}</td>
 <td class="{$optionbg}" width="300">
